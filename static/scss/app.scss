@@ -1,0 +1,68 @@
+// 1. Import the initial variables
+@import './../node_modules/bulma/sass/utilities/initial-variables';
+@import './../node_modules/bulma/sass/utilities/functions';
+
+// 2. Set your own initial variables
+// Update blue
+$blue: rgba(43, 187, 173, 1.0);
+// Update  white-ter
+$white-ter: hsl(0, 0%, 95%);
+// Update  primary
+$primary: #202020;
+// Add a serif family
+$family-marugo: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+// Update the section padding variables
+$section-padding: 0.5rem 1rem;
+
+// 3. Set the derived variables
+// Use the new gray-trans as the primary color
+$primary: $white-ter;
+$primary-invert: $white;
+// Use the existing orange as the danger color
+$danger: $orange;
+// Use the new marugo family
+$family-primary: $family-marugo;
+// Set link invert to gray
+$link-hover: $grey;
+$link-focus: $grey;
+$link-active: $grey;
+$link-active-border: $grey;
+
+// 4. Setup your Custom Colors
+$linkedin: #0077B5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #1DA1F2;
+$twitter-invert: findColorInvert($twitter);
+$github: #222222;
+$github-invert: findColorInvert($github);
+
+// 5. Add new color variables to the color map.
+@import "../node_modules/bulma/sass/utilities/derived-variables.sass";
+$addColors: (
+  "twitter":($twitter, $twitter-invert),
+  "linkedin": ($linkedin, $linkedin-invert),
+  "github": ($github, $github-invert)
+);
+$colors: map-merge($colors, $addColors);
+
+// 6. Import the rest of Bulma
+@import "../node_modules/bulma/bulma.sass";
+
+// Update html background and navbar
+$html_color: hsl(0, 0%, 95%);
+$body_color: hsl(0, 0%, 99%);
+html{
+  background-color: $html_color;
+}
+body{
+  background-color: $body_color;
+}
+
+.navbar-item,
+.navbar-link {
+  color: $navbar-item-color;
+  display: block;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
