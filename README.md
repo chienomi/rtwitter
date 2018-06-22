@@ -1,5 +1,7 @@
 # RT/fav Predictor for Twitter
 
+API to predict how many faves your tweet will get
+
 ## how to use
 ```
 pip -r requirement.txt
